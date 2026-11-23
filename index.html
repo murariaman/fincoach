@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FinCoach | Finance, explained like a lemonade stand</title>
+  <meta name="description" content="FinCoach is a friendly finance tutor for people who think they are bad at math. Learn real finance through everyday stories first, formulas second.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="FinCoach home">
+      <span class="brand-mark" aria-hidden="true">$</span>
+      <span>FinCoach</span>
+    </a>
+    <a class="nav-link" href="about.html">How it works</a>
+  </header>
+
+  <main>
+    <!-- HERO: autoplaying, muted, looping AI video -->
+    <section class="hero" id="top">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" disablepictureinpicture>
+        <source src="hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">A finance tutor for people who say "I'm not a math person"</p>
+        <h1>Finance, explained like a lemonade stand.</h1>
+        <p class="tagline">Stories first, formulas second. Learn how money really works without the fear.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="about.html">See how FinCoach works</a>
+          <a class="btn btn-ghost" href="#playground">Try the growth playground</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Short pitch -->
+    <section class="pitch">
+      <div class="wrap pitch-grid">
+        <article class="card">
+          <h3>Start with a story</h3>
+          <p>Every idea opens with something familiar, like a coffee cart, a car loan or a lemonade stand.</p>
+        </article>
+        <article class="card">
+          <h3>Then the plain English</h3>
+          <p>We say what the concept means in normal words before a single symbol shows up.</p>
+        </article>
+        <article class="card">
+          <h3>Then the numbers</h3>
+          <p>The formula arrives last, and you walk through it one small step at a time.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- X-FACTOR: interactive growth playground -->
+    <section class="playground" id="playground">
+      <div class="wrap">
+        <h2>The Growth Playground</h2>
+        <p class="lede">Your lemonade stand made some profit. What happens if you invest it and leave it alone? Move the sliders and watch the curve.</p>
+
+        <div class="calc">
+          <div class="controls">
+            <label>
+              <span>Starting amount <output id="o-start">$1,000</output></span>
+              <input id="start" type="range" min="0" max="10000" step="100" value="1000">
+            </label>
+            <label>
+              <span>Added every month <output id="o-monthly">$50</output></span>
+              <input id="monthly" type="range" min="0" max="1000" step="10" value="50">
+            </label>
+            <label>
+              <span>Yearly return <output id="o-rate">7%</output></span>
+              <input id="rate" type="range" min="0" max="15" step="0.5" value="7">
+            </label>
+            <label>
+              <span>Years <output id="o-years">20</output></span>
+              <input id="years" type="range" min="1" max="40" step="1" value="20">
+            </label>
+          </div>
+
+          <div class="results">
+            <div class="chart-wrap">
+              <svg id="chart" viewBox="0 0 600 320" role="img" aria-label="Chart comparing money saved with growth and money saved without growth"></svg>
+              <div class="legend">
+                <span><i class="dot dot-grow"></i> With compounding</span>
+                <span><i class="dot dot-flat"></i> Just saving, no growth</span>
+              </div>
+            </div>
+            <div class="stats">
+              <div class="stat stat-grow">
+                <span class="stat-label">You end up with</span>
+                <strong id="final-grow">$0</strong>
+              </div>
+              <div class="stat">
+                <span class="stat-label">You put in</span>
+                <strong id="final-flat">$0</strong>
+              </div>
+              <div class="stat stat-gain">
+                <span class="stat-label">Growth did this for free</span>
+                <strong id="final-gain">$0</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <h2>Ready to see the method?</h2>
+        <p>Read how a FinCoach lesson works, then ask the chatbot a real finance question.</p>
+        <a class="btn btn-primary" href="about.html">Go to the second page</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="x-footer">
+    <div class="wrap">
+      <p><strong>X-Factor:</strong> The Growth Playground is an interactive calculator. Slide the starting amount, monthly savings, yearly return and years, and a live chart shows how compounding turns small lemonade stand profits into real money. It makes a finance idea something you can see.</p>
+    </div>
+  </footer>
+
+  <script src="playground.js"></script>
+  <script>window.chtlConfig = { chatbotId: "6271639595" }</script>
+  <script async data-id="6271639595" id="chtl-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+</body>
+</html>
